@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import BotsPage from "./containers/BotsPage";
 import BotCollection from "./containers/BotCollection";
-import BotCard from "./components/BotCard";
+// import BotCard from "./components/BotCard";
 import "./App.css";
 
 class App extends Component {
@@ -9,8 +9,8 @@ class App extends Component {
     return (
       <div className="App">
         <BotsPage />
-        <BotCollection />
-        <BotCard />
+        {/* <BotCollection />
+        <BotCard /> */}
       </div>
     );
   }

@@ -5,11 +5,15 @@ import BotCard from "../components/BotCard";
 // class BotCollection extends React.Component {
   //your code here
   const BotCollection = (props) => {
-	  const botCollection = props.botCollection.map(bot => {
+	  const botCollection = props.bots.map(bot => {
 		//   console.log('botCollection', botCollection)
-		  return <BotCard key={bot.id} bot={bot} />
+		  return <BotCard
+			key={bot.id} 
+			bot={bot} 
+			addToBotArmy={props.addToBotArmy}
+			  />
 	  })
-  
+	
   
 
 

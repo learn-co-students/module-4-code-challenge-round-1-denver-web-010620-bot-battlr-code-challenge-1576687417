@@ -1,23 +1,15 @@
 import React, { Component } from "react";
-import BotCollection from './BotCollection'
+import BotCollection from './BotCollection';
+import YourBotArmy from './YourBotArmy'
 
 
 class BotsPage extends Component {
   //start here with your code for step one
   state = {
 
-    bots: [
-      {
-        id: '',
-        name: '',
-        health: '',
-        damage: '',
-        armor: '',
-        bot_class: '',
-        catchphrase: '',
-        avatar_url: ''
-      }
-    ]
+    bots: [],
+    botArmy: []
+    
     }
     componentDidMount() {
   
@@ -27,13 +19,22 @@ class BotsPage extends Component {
     
     
     }
-
+    addToBotArmy = (bot) => {
+      if (!this.state.botArmy.includes(bot)){
+      this.setState({botArmy: [...this.state.botArmy, bot]})
+    }}
 
 
   render() {
+    
     return (
       <div>
-        <BotCollection />
+        <YourBotArmy botArmy={this.state.botArmy} />
+        <BotCollection 
+        bots={this.state.bots} 
+        addToBotArmy={this.addToBotArmy} 
+        />
+        
       </div>
     );
   }
